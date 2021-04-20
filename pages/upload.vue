@@ -44,11 +44,8 @@
                 console.log(this.inputFileBase64);
             },
             async uploadFile() {
-                let production = process.env.NODE_ENV === "production" ? "/api/upload" : "http://localhost:3000/api/upload";
-                console.log(production);
-                console.log(process);
                 this.loading = true;
-                await this.$axios.$post(production , {
+                await this.$axios.$post(`${process.env.baseUrl}/api/upload` , {
                     name: this.inputFileName,
                     base64: this.inputFileBase64
                 })
