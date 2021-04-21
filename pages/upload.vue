@@ -45,7 +45,7 @@
             },
             async uploadFile() {
                 this.loading = true;
-                await this.$axios.$post(`/api/upload` , {
+                await this.$axios.$post(`https://imgixmgmt.vercel.app/api/upload` , {
                     name: this.inputFileName,
                     base64: this.inputFileBase64
                 })
