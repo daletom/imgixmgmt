@@ -45,7 +45,7 @@
             },
             async uploadFile() {
                 this.loading = true;
-                await this.$axios.$post(`${process.env.baseUrl}/api/upload` , {
+                await this.$axios.$post(`/api/upload` , {
                     name: this.inputFileName,
                     base64: this.inputFileBase64
                 })
