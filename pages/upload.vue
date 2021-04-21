@@ -52,8 +52,17 @@
                 .then(response => {
                     this.loading = false;
                     this.returnData = response;
+                    this.publish();
                 })
-
+            },
+            async publish() {
+                let publishData = this.returnData.data.attributes;
+                await this.$axios.$post('https://imgixmgmt.vercel.app/api/publish' , {
+                    name: publishData.origin_path
+                })
+                .then(response => {
+                    console.log(response);
+                })
             }
         }
         
